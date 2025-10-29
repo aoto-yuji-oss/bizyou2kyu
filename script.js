@@ -160,7 +160,7 @@ function showResults() {
 // 🔸 スコア送信用関数
 async function sendScoreToGAS(name, score) {
     try {
-        const response = await fetch(GAS_API_URL, {
+        const response = await fetch(https://script.google.com/macros/s/AKfycbwAB9YuQZJPZLXjniUkL1uBpJYmpxR5-e1UVH5xIGoNyv1k-TfYJJ8MIY_tuhJTlxXg/exec, {
             method: 'POST',
             headers: { 'Content-Type': 'application/json' },
             body: JSON.stringify({ name, score })
@@ -191,4 +191,5 @@ restartButton.onclick = () => {
 };
 
 // アプリの開始
+
 loadQuizData();
