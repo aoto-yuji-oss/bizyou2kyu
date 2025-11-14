@@ -114,10 +114,16 @@ function checkAnswer(selectedChoice, currentQuestion) {
     // 正解をハイライト
     correctButton.classList.add('correct');
 
-　　// 解説の表示
+　　// 解説の表示（HTML対応版）
 　　const correctLabel = currentQuestion[`Choice_${currentQuestion.Correct_Choice}`];
-　　explanationTextElement.textContent = `【正解】${correctLabel}\n\n${currentQuestion.Explanation}`;
+
+　　explanationTextElement.innerHTML = `
+　　  <h3>【正解】${correctLabel}</h3>
+ 　　 <p>${currentQuestion.Explanation.replace(/\n/g, '<br>')}</p>
+　　`;
+
 　　explanationArea.style.display = 'block';
+
 
 
     // 次へボタンの表示
@@ -195,5 +201,6 @@ restartButton.onclick = () => {
 // アプリの開始
 
 loadQuizData();
+
 
 
